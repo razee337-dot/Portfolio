@@ -1,0 +1,300 @@
+/* ==========================================================================
+   Design Tokens & CSS Variables
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap');
+
+:root {
+  /* Fonts */
+  --font-base: 'Outfit', sans-serif;
+  --font-display: 'Syne', sans-serif;
+
+  /* Easing curves */
+  --ease-elastic: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  --ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Transition speeds */
+  --transition-fast: 0.2s var(--ease-out);
+  --transition-medium: 0.4s var(--ease-out);
+  --transition-slow: 0.8s var(--ease-out);
+
+  /* Theme: Dark (Default) */
+  --bg-color: #0b0f19;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #15223c 0%, #0b0f19 75%);
+  --surface-color: rgba(15, 23, 42, 0.7);
+  --surface-border: rgba(255, 255, 255, 0.06);
+  --surface-border-hover: rgba(255, 255, 255, 0.16);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #64748b;
+  
+  --accent-1: #2563eb; /* Royal Blue */
+  --accent-1-rgb: 37, 99, 235;
+  --accent-2: #0284c7; /* Sky Blue */
+  --accent-2-rgb: 2, 132, 199;
+  
+  --glow-accent-1: 0 0 20px rgba(37, 99, 235, 0.35);
+  --glow-accent-2: 0 0 20px rgba(2, 132, 199, 0.35);
+  
+  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+  --header-bg: rgba(11, 15, 25, 0.75);
+  --input-bg: rgba(15, 23, 42, 0.5);
+  
+  --cursor-color: #3b82f6;
+}
+
+[data-theme="light"] {
+  /* Theme: Light */
+  --bg-color: #f8fafc;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #e2e8f0 0%, #f8fafc 75%);
+  --surface-color: rgba(255, 255, 255, 0.75);
+  --surface-border: rgba(37, 99, 235, 0.08);
+  --surface-border-hover: rgba(37, 99, 235, 0.18);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  
+  --accent-1: #1d4ed8; /* Cobalt Blue */
+  --accent-1-rgb: 29, 78, 216;
+  --accent-2: #2563eb; /* Royal Blue */
+  --accent-2-rgb: 37, 99, 235;
+  
+  --glow-accent-1: 0 0 20px rgba(29, 78, 216, 0.15);
+  --glow-accent-2: 0 0 20px rgba(37, 99, 235, 0.15);
+  
+  --card-shadow: 0 10px 30px 0 rgba(148, 163, 184, 0.12);
+  --header-bg: rgba(248, 250, 252, 0.85);
+  --input-bg: rgba(255, 255, 255, 0.8);
+  
+  --cursor-color: #2563eb;
+}
+
+/* ==========================================================================
+   CSS Reset & Global Settings
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-base);
+  background: var(--bg-gradient);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color var(--transition-medium), color var(--transition-medium);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-1);
+}
+
+/* ==========================================================================
+   Custom Custom Cursor (Only on Desktop)
+   ========================================================================== */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--cursor-color);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+}
+
+.custom-cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--cursor-color);
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s cubic-bezier(0.25, 1, 0.5, 1), 
+              width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover effects for cursor */
+.cursor-hover .custom-cursor {
+  width: 16px;
+  height: 16px;
+  background-color: var(--accent-1);
+}
+
+.cursor-hover .custom-cursor-follower {
+  width: 50px;
+  height: 50px;
+  border-color: var(--accent-1);
+  background-color: rgba(var(--accent-1-rgb), 0.08);
+}
+
+/* Hide on Mobile */
+@media (max-width: 768px) {
+  .custom-cursor, .custom-cursor-follower {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Layout Containers
+   ========================================================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 8rem 0;
+  position: relative;
+}
+
+/* Section Titles */
+.section-header {
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+
+.section-subtitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 5rem 0;
+  }
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* ==========================================================================
+   Utility Classes & Transitions
+   ========================================================================== */
+.glass {
+  background: var(--surface-color);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--surface-border);
+  box-shadow: var(--card-shadow);
+  border-radius: 1.25rem;
+  transition: border var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.glass:hover {
+  border-color: var(--surface-border-hover);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Scroll Animations CSS */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Speed variations for reveal */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Grid / Flex Utilities */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 992px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

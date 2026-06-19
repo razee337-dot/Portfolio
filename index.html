@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Razeena TM - Creative Developer & UI/UX Designer. Immersive digital spaces, web layouts, and interactive experiences.">
+  <title>Razeena TM | Creative Developer & UI/UX Designer</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body data-theme="dark">
+
+  <!-- Custom Cursor Followers (Desktop Only) -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="container nav-container">
+      <a href="#hero" class="logo" id="logo">
+        RT<span class="logo-dot"></span>
+      </a>
+      
+      <!-- Nav Links -->
+      <nav class="nav-links" id="nav-links">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Light / Dark Mode Toggle -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
+          <!-- Moon Icon (Dark Mode default icon, visible on light theme) -->
+          <svg class="moon-icon" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <!-- Sun Icon (Visible on dark theme) -->
+          <svg class="sun-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+        </button>
+
+        <!-- Hamburger Menu Button -->
+        <button class="menu-btn" id="menu-btn" aria-label="Open navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <canvas id="hero-particles"></canvas>
+    <div class="container">
+      <div class="hero-wrapper-grid">
+        <!-- Hero Details -->
+        <div class="hero-content">
+          <div class="hero-tag reveal">
+            <span class="hero-tag-line"></span>
+            <span>Welcome to my universe</span>
+          </div>
+          <h1 class="hero-title reveal reveal-delay-1">
+            I'm <span class="text-gradient" id="hero-name">Razeena TM</span>
+          </h1>
+          <h2 class="hero-title reveal reveal-delay-2" style="font-size: 1.8rem; margin-top: -1rem; min-height: 4.5rem; color: var(--text-secondary); transition: opacity 0.4s ease, transform 0.4s ease;" id="hero-subtitle">
+            Software Engineer
+          </h2>
+          <p class="hero-description reveal reveal-delay-3" id="hero-desc">
+            Bridging Education, Technology, and Innovation.
+          </p>
+          <div class="hero-buttons reveal reveal-delay-4">
+            <a href="assets/Razeena_TM_Resume.pdf" download="Razeena_TM_Resume.pdf" class="btn btn-primary" id="hero-download-btn">
+              <span>Download Resume</span>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Contact Me</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Avatar Image Frame -->
+        <div class="hero-avatar-container reveal reveal-delay-2">
+          <div class="hero-avatar-inner">
+            <img src="assets/razeena_avatar.png" alt="Razeena TM Headshot" class="hero-avatar-image" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=400'">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll Down Mouse Indicator -->
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down to about section">
+      <span class="scroll-indicator-mouse">
+        <span class="scroll-indicator-wheel"></span>
+      </span>
+      <span>Scroll</span>
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Story</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      
+      <div class="about-grid">
+        <div class="about-text reveal reveal-delay-1">
+          <p class="about-paragraph" id="about-story-1">
+            Hello! I'm Razeena TM, a creative developer. My passion lies in creating interactive interfaces that feel alive, responsive, and tactile.
+          </p>
+          <p class="about-paragraph" id="about-story-2">
+            When I'm not writing code or tweaking bezier curves, you can find me experimenting with generative art, playing the piano, or exploring hiking trails.
+          </p>
+          <a href="assets/Razeena_TM_Resume.pdf" download="Razeena_TM_Resume.pdf" class="btn btn-secondary" style="margin-top: 1rem;" id="about-download-btn">
+            <span>Download CV</span>
+            <svg viewBox="0 0 24 24" style="width: 1.25rem; height: 1.25rem; fill: none; stroke: currentColor; stroke-width: 2;" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="stats-grid" id="stats-grid">
+          <!-- Stats rendered dynamically via JS -->
+        </div>
+      </div>
+
+      <!-- Education Subsection Grid -->
+      <div class="reveal reveal-delay-2" style="margin-top: 6rem;">
+        <h3 class="section-title" style="font-size: 2rem; margin-bottom: 2.5rem; border-left: 4px solid var(--accent-1); padding-left: 1rem;">Education History</h3>
+        <div class="education-grid" id="education-grid">
+          <!-- Education cards rendered dynamically via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" style="background-color: rgba(var(--bg-color), 0.3);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Proficiencies</span>
+        <h2 class="section-title">My Skillset</h2>
+      </div>
+      
+      <div class="skills-container" id="skills-container">
+        <!-- Skill categories rendered dynamically via JS -->
+      </div>
+
+      <!-- Achievements Highlights Subsection -->
+      <div class="reveal reveal-delay-2" style="margin-top: 6rem;">
+        <div class="section-header">
+          <span class="section-subtitle">Highlights</span>
+          <h2 class="section-title">Key Achievements</h2>
+        </div>
+        <div class="achievements-grid" id="achievements-grid">
+          <!-- Achievements rendered dynamically via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Portfolio</span>
+        <h2 class="section-title">Selected Works</h2>
+      </div>
+      
+      <!-- Project Filter tabs -->
+      <div class="projects-filter reveal reveal-delay-1">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web Apps & DB</button>
+        <button class="filter-btn" data-filter="design">Research & Seminars</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projects-grid">
+        <!-- Project cards rendered dynamically via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" style="background-color: rgba(var(--bg-color), 0.3);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Journey</span>
+        <h2 class="section-title">Work Experience</h2>
+      </div>
+      
+      <div class="timeline" id="experience-timeline">
+        <!-- Timeline items rendered dynamically via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Connection</span>
+        <h2 class="section-title">Say Hello</h2>
+      </div>
+      
+      <div class="contact-grid">
+        <!-- Info Column -->
+        <div class="contact-info reveal reveal-delay-1">
+          <div>
+            <h3 class="contact-info-title">Let's build something amazing together</h3>
+            <p class="contact-info-desc">Have an exciting project suggestion, a job proposal, or simply want to chat? Shoot me a message and I'll get back to you within 24 hours.</p>
+          </div>
+          
+          <div class="contact-details">
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div class="contact-detail-text">
+                <p>Email</p>
+                <p id="contact-email">hello@alexmorgan.com</p>
+              </div>
+            </div>
+            
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                  <circle cx="12" cy="9" r="2.5"/>
+                </svg>
+              </div>
+              <div class="contact-detail-text">
+                <p>Location</p>
+                <p>Kerala, India</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Socials Row -->
+          <div class="socials-row" id="socials-row">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- Form Column -->
+        <div class="contact-form-card glass reveal reveal-delay-2">
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <input type="text" id="form-name" class="form-control" placeholder=" " required>
+              <label for="form-name" class="form-label">Full Name</label>
+              <span class="error-message">Please enter your name</span>
+            </div>
+            
+            <div class="form-group">
+              <input type="email" id="form-email" class="form-control" placeholder=" " required>
+              <label for="form-email" class="form-label">Email Address</label>
+              <span class="error-message">Please enter a valid email address</span>
+            </div>
+            
+            <div class="form-group">
+              <textarea id="form-message" class="form-control" placeholder=" " required></textarea>
+              <label for="form-message" class="form-label">Your Message</label>
+              <span class="error-message">Please enter your message</span>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <span>Send Message</span>
+              <svg viewBox="0 0 24 24" style="width: 1.25rem; height: 1.25rem; fill: none; stroke: currentColor; stroke-width: 2;" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"/>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <a href="#hero" class="logo">RT<span class="logo-dot"></span></a>
+      <p>&copy; 2026 Razeena TM. Built from scratch with love & premium interactions.</p>
+    </div>
+  </footer>
+
+  <!-- Project Details Modal Overlay -->
+  <div class="modal" id="project-modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-container glass">
+      <button class="modal-close-btn" aria-label="Close modal dialog">
+        <svg viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="modal-body">
+        <div class="modal-image-wrapper">
+          <img src="" alt="" class="modal-image">
+        </div>
+        <div class="modal-header-info">
+          <h2 class="modal-title">Project Title</h2>
+          <p class="modal-subtitle">Project Subtitle</p>
+        </div>
+        <div class="modal-tags">
+          <!-- Rendered dynamically -->
+        </div>
+        <p class="modal-desc">Project full description details.</p>
+        <div class="modal-links">
+          <a href="#" target="_blank" class="btn btn-primary" id="modal-live-link">
+            <span>Visit Live Demo</span>
+            <svg viewBox="0 0 24 24" style="width: 1.25rem; height: 1.25rem; fill: none; stroke: currentColor; stroke-width: 2;" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+            </svg>
+          </a>
+          <a href="#" target="_blank" class="btn btn-secondary" id="modal-code-link">
+            <span>View Source Code</span>
+            <svg viewBox="0 0 24 24" style="width: 1.25rem; height: 1.25rem; fill: currentColor;">
+              <path d="M12 0c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Success Toast Notifications -->
+  <div class="toast-notification glass" id="success-toast">
+    <div class="toast-icon">
+      <svg viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+    <div class="toast-text">Message sent successfully!</div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
