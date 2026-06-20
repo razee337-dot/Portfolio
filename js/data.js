@@ -5,150 +5,186 @@
 
 const PORTFOLIO_DATA = {
   profile: {
-    name: "Razeena TM",
-    titles: ["Software Engineer", "MIS Coordinator", "M.Tech CSE Student"],
-    bio: "Bridging Education, Technology, and Innovation. Over 12 years of experience in education technology, systems coordination, and academic instruction.",
+    name: "RAZEENA T M",
+    titles: [
+      "M.Tech Networks & Computer Science",
+      "MIS Coordinator",
+      "Assistant Professor",
+      "Cybersecurity & Networking Enthusiast"
+    ],
+    bio: "Dedicated IT professional with 12+ years of experience in Information Systems Management, Technical Support, Academic Instruction, and Educational Technology. Currently pursuing M.Tech in Networks & Computer Science with a strong interest in Cybersecurity, Network Engineering, Machine Learning, and Digital Transformation.",
     cvLink: "assets/Razeena_TM_Resume.pdf",
     avatar: "assets/razeena_avatar.png",
     socials: [
-      { name: "GitHub", url: "https://github.com", icon: "github" },
-      { name: "LinkedIn", url: "https://linkedin.com", icon: "linkedin" },
-      { name: "Email", url: "mailto:hello@razeenatm.com", icon: "email" }
+      { name: "LinkedIn", url: "https://linkedin.com/in/razeena-tm-aba200416", icon: "linkedin" },
+      { name: "Email", url: "mailto:razee337@gmail.com", icon: "email" }
     ]
   },
   stats: [
-    { value: "12+", label: "Years Experience" },
-    { value: "SSK", label: "Govt Ed-Tech Coordinator" },
-    { value: "10+", label: "Academic Years Taught" },
-    { value: "M.Tech", label: "CSE Research Scholar" }
+    { value: "12+", label: "Years as MIS Coordinator" },
+    { value: "1", label: "Year Academic Teaching" },
+    { value: "M.Tech", label: "Networks & Computer Science" }
   ],
   about: {
-    story: "I am a Software Engineer and Academic Educator with over 12 years of professional experience in education technology, academic administration, and software support systems. Currently, I am pursuing my postgraduate M.Tech in Computer Science & Engineering while working as an MIS Coordinator in the General Education Department of Kerala. I am deeply passionate about digital transformation, technical problem solving, and mentoring future engineers.",
-    subStory: "My career has focused on two major streams: engineering education and education database administration. As an Assistant Professor at the College of Engineering Trikaripur, I spent over a decade teaching core CS subjects, supervising labs, and guiding student project architectures. At Samagra Shiksha Kerala, I managed massive database systems and educational coordination portals for the government."
+    story: "I am an experienced IT professional currently pursuing M.Tech in Network Engineering and Security. My career spans technical support, educational technology management, academic teaching, and information systems administration. I have extensive experience training teachers and headmasters, managing statewide educational information systems, and supporting technology-driven initiatives.",
+    interests: [
+      "Cybersecurity",
+      "Network Security",
+      "Python Development",
+      "Machine Learning",
+      "Digital Education Systems",
+      "Network Administration",
+      "Technical Support"
+    ]
   },
   education: [
     {
-      degree: "M.Tech in Computer Science & Engineering",
-      year: "2025 - 2027",
-      institution: "Postgraduate Research Scholar",
-      score: "Specializing in Intelligent Systems & Advanced Architecture"
+      degree: "M.Tech in Computer Science and Engineering (Networks & Security)",
+      year: "2025 – 2027",
+      institution: "Government Engineering College Wayanad",
+      university: "APJ Abdul Kalam Technological University",
+      score: "Postgraduate"
     },
     {
-      degree: "B.Tech in Computer Science & Engineering",
-      year: "Cochin University (CUSAT)",
+      degree: "B.Tech in Computer Science and Engineering",
+      year: "2011",
       institution: "College of Engineering Trikaripur",
-      score: "Graduated with aggregate: 73%"
+      university: "Cochin University",
+      score: "Graduated with 73%"
     }
   ],
-  achievements: [
+  experience: [
     {
-      title: "12+ Years Experience",
-      desc: "Proven track record in systems coordination, software support, and teaching.",
-      icon: "experience"
+      period: "2013 – Present",
+      role: "MIS Coordinator",
+      company: "Samagra Shiksha Kerala",
+      responsibilities: [
+        "Managed educational MIS systems",
+        "Technical support and troubleshooting",
+        "Data management and reporting",
+        "Training teachers and headmasters",
+        "Educational technology implementation",
+        "IT infrastructure support"
+      ]
     },
     {
-      title: "Ed-Tech Specialist",
-      desc: "Designed and supported critical government education MIS infrastructure.",
-      icon: "tech"
-    },
-    {
-      title: "Academic Mentor",
-      desc: "Supervised numerous student technical seminars and research lab activities.",
-      icon: "mentor"
-    },
-    {
-      title: "Govt System Contributor",
-      desc: "Supported SSK in coordinating statewide schools database management systems.",
-      icon: "gov"
-    },
-    {
-      title: "M.Tech CSE Scholar",
-      desc: "Conducting active research in advanced computer science methodologies.",
-      icon: "scholar"
+      period: "2011 – 2012",
+      role: "Assistant Professor",
+      company: "College of Engineering Trikaripur",
+      responsibilities: [
+        "Teaching Computer Science subjects",
+        "Conducting laboratory sessions",
+        "Project guidance and mentoring",
+        "Academic administration",
+        "Student development activities"
+      ]
     }
   ],
   skills: [
     {
-      category: "Technical Stack",
+      category: "Programming",
       items: [
-        { name: "C / C++ Programming", level: 90 },
-        { name: "Python Development", level: 85 },
-        { name: ".NET Framework (ASP.NET)", level: 88 },
-        { name: "SQL Databases (MySQL / MSSQL)", level: 92 },
-        { name: "HTML5 / CSS3 Layouts", level: 95 },
-        { name: "Linux & Windows Systems", level: 85 }
+        { name: "Python", level: 90 },
+        { name: "C", level: 85 },
+        { name: "C++", level: 80 },
+        { name: "SQL", level: 88 },
+        { name: "Bash", level: 82 },
+        { name: "ASP.NET", level: 78 },
+        { name: "VB.NET", level: 75 }
       ]
     },
     {
-      category: "Management & Methods",
+      category: "Cybersecurity",
       items: [
-        { name: "MIS & System Administration", level: 95 },
-        { name: "Software Development Lifecycle", level: 88 },
-        { name: "Technical Training & Mentoring", level: 92 },
-        { name: "Microsoft Office Suite Pro", level: 95 }
+        { name: "Wireshark", level: 88 },
+        { name: "Nmap", level: 90 },
+        { name: "Burp Suite", level: 80 },
+        { name: "Kali Linux", level: 85 },
+        { name: "Vulnerability Assessment", level: 82 },
+        { name: "Network Monitoring", level: 85 },
+        { name: "Security Analysis", level: 84 }
       ]
     },
     {
-      category: "Professional Strengths",
+      category: "Networking",
       items: [
-        { name: "Analytical Problem Solving", level: 95 },
-        { name: "Technical Leadership", level: 90 },
-        { name: "Academic Supervision", level: 92 },
-        { name: "Adaptability & Learning", level: 95 }
+        { name: "TCP/IP", level: 92 },
+        { name: "DNS", level: 88 },
+        { name: "DHCP", level: 90 },
+        { name: "Routing & Switching", level: 85 },
+        { name: "Network Troubleshooting", level: 92 },
+        { name: "LAN/WAN Architecture", level: 88 }
+      ]
+    },
+    {
+      category: "Operating Systems",
+      items: [
+        { name: "Linux Administration", level: 88 },
+        { name: "Windows Systems", level: 90 }
+      ]
+    },
+    {
+      category: "Professional Skills",
+      items: [
+        { name: "Technical Support & MIS", level: 95 },
+        { name: "Training & Mentoring", level: 92 },
+        { name: "System Documentation", level: 90 },
+        { name: "Technical Leadership", level: 88 },
+        { name: "Professional Communication", level: 92 }
       ]
     }
   ],
   projects: [
     {
-      id: "braille-web",
-      title: "Braille Web",
-      subtitle: "Accessibility Web Application",
-      description: "An accessibility-focused web application designed to assist visually impaired individuals. Built using ASP.NET and MySQL databases.",
-      fullDescription: "Braille Web is an accessibility-oriented portal developed to translate website elements into screen-reader readable structures and simulated Braille interfaces. Utilizing an ASP.NET MVC backend, it connects to a optimized MySQL database managing student accessibility profiles. Designed to ensure compliance with global Web Content Accessibility Guidelines (WCAG).",
+      id: "suspicious-web-traffic",
+      title: "Suspicious Web Traffic Detection",
+      subtitle: "Machine Learning Based Cyber Threat Shield",
+      description: "Developed a hybrid machine learning model using Random Forest and Isolation Forest to identify suspicious web traffic and detect cybersecurity threats.",
+      fullDescription: "Suspicious Web Traffic Detection is a network security monitoring application designed to detect cyber threats. It parses raw web logs or network flow packets and classifies them into normal, suspicious, or malicious activities. Implements a dual-model structure: Isolation Forest filters out obvious outliers, while Random Forest performs precise multiclass threat classification.",
       categories: ["web"],
-      tech: ["ASP.NET", "C#", "MySQL", "Web Accessibility", "HTML5"],
+      tech: ["Python", "Scikit-Learn", "Pandas", "NumPy", "Machine Learning"],
+      image: "assets/project_aetheria.png",
+      liveUrl: "#",
+      codeUrl: "#"
+    },
+    {
+      id: "braille-web",
+      title: "Braille Web System",
+      subtitle: "Accessibility Web Application",
+      description: "Developed an accessible web application supporting Braille-enabled functionality to empower visually impaired users.",
+      fullDescription: "The Braille Web System is a custom educational and accessibility platform designed for visually challenged learners. It supports dynamic screen translation, keyboard shortcut navigation, and tactile Braille display simulation, saving user settings and profiles securely inside a MySQL backend with an ASP.NET application shell.",
+      categories: ["web"],
+      tech: ["ASP.NET", "MySQL", "C#", "Web Accessibility", "HTML5"],
       image: "assets/project_braille.png",
       liveUrl: "#",
       codeUrl: "#"
     },
     {
       id: "crime-file",
-      title: "Crime File System",
-      subtitle: "Relational Database Portal",
-      description: "A secure relational database application tracking, logging, and structuring law enforcement record databases.",
-      fullDescription: "Crime File is a secure database management system designed to log crime records, suspect files, and case details. Built with robust relational schema design, utilizing triggers and transaction rollbacks to prevent data inconsistency. Features a clean search dashboard for police coordinators to generate case statistics.",
+      title: "Crime File Management System",
+      subtitle: "Secure Relational Record Portal",
+      description: "Developed a secure database-driven crime record management application featuring cryptographic integrity.",
+      fullDescription: "The Crime File Management System provides a secure, relational platform for law enforcement agencies to catalog, audit, and trace case reports, evidence chains, and court files. Developed using VB.NET and an MS SQL Server backend, employing robust transactional rollbacks and user role security profiles.",
       categories: ["web"],
-      tech: ["SQL Database", "Relational Mapping", "C# Interface", "Database Security"],
+      tech: ["VB.NET", "SQL Server", "Database Security", "Relational Mapping"],
       image: "assets/project_crime.png",
-      liveUrl: "#",
-      codeUrl: "#"
-    },
-    {
-      id: "domotics",
-      title: "Domotics Seminar",
-      subtitle: "Home Automation Architecture",
-      description: "A comprehensive technical research project on Home Automation (Domotics) protocols and IoT architectures.",
-      fullDescription: "This project presents a structured architectural study of modern Domotics (Home Automation). It details communication protocols (Zigbee, Z-Wave, Wi-Fi), microcontroller routing topologies, sensor hub integrations, and safety overrides. Focuses on low-power architectures for smart energy utilization.",
-      categories: ["design"],
-      tech: ["Domotics Architecture", "IoT Protocols", "Smart Systems", "Energy Management"],
-      image: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=600&h=400",
       liveUrl: "#",
       codeUrl: "#"
     }
   ],
-  experience: [
-    {
-      period: "2013 - 2025 August",
-      role: "MIS Coordinator",
-      company: "Samagra Shiksha Kerala, General Education Department",
-      description: "Coordinated statewide education management systems (MIS) and administrative databases. Provided essential technical support, server maintenance, data analysis dashboards, and digital infrastructure training for general education staff."
-    },
-    {
-      period: "2011 - 2022",
-      role: "Assistant Professor (Computer Science)",
-      company: "College of Engineering Trikaripur",
-      description: "Instructed core Computer Science and Engineering courses. Guided undergraduate student projects, managed computer engineering laboratory operations, mentored academic research, and supported departmental administration workflows."
-    }
+  certifications: [
+    { name: "AI Integrated Cybersecurity and Networking Internship", icon: "shield" },
+    { name: "Python Programming", icon: "code" },
+    { name: "Linux Administration", icon: "terminal" },
+    { name: "Network Security Training", icon: "network" },
+    { name: "Cybersecurity Workshops", icon: "lock" }
+  ],
+  achievements: [
+    "12+ years of professional experience as MIS Coordinator in Samagra Shiksha Kerala",
+    "Trained hundreds of teachers and school headmasters in educational technology systems",
+    "Guided and mentored numerous Computer Science undergraduate engineering student projects",
+    "Managed statewide educational technical support and MIS databases for government initiatives",
+    "Pursuing postgraduate specialization in Computer Science (Network Security) to research modern threat defense"
   ]
 };
 

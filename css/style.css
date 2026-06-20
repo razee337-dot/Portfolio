@@ -18,55 +18,29 @@
   --transition-medium: 0.4s var(--ease-out);
   --transition-slow: 0.8s var(--ease-out);
 
-  /* Theme: Dark (Default) */
-  --bg-color: #0b0f19;
-  --bg-gradient: radial-gradient(circle at 50% 0%, #15223c 0%, #0b0f19 75%);
-  --surface-color: rgba(15, 23, 42, 0.7);
-  --surface-border: rgba(255, 255, 255, 0.06);
-  --surface-border-hover: rgba(255, 255, 255, 0.16);
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-tertiary: #64748b;
-  
-  --accent-1: #2563eb; /* Royal Blue */
-  --accent-1-rgb: 37, 99, 235;
-  --accent-2: #0284c7; /* Sky Blue */
-  --accent-2-rgb: 2, 132, 199;
-  
-  --glow-accent-1: 0 0 20px rgba(37, 99, 235, 0.35);
-  --glow-accent-2: 0 0 20px rgba(2, 132, 199, 0.35);
-  
-  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
-  --header-bg: rgba(11, 15, 25, 0.75);
-  --input-bg: rgba(15, 23, 42, 0.5);
-  
-  --cursor-color: #3b82f6;
-}
-
-[data-theme="light"] {
-  /* Theme: Light */
-  --bg-color: #f8fafc;
-  --bg-gradient: radial-gradient(circle at 50% 0%, #e2e8f0 0%, #f8fafc 75%);
-  --surface-color: rgba(255, 255, 255, 0.75);
-  --surface-border: rgba(37, 99, 235, 0.08);
-  --surface-border-hover: rgba(37, 99, 235, 0.18);
+  /* Theme: Light Only (Professional Clean White and Blue) */
+  --bg-color: #ffffff;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #f0f7ff 0%, #ffffff 80%);
+  --surface-color: rgba(255, 255, 255, 0.85);
+  --surface-border: rgba(0, 86, 179, 0.08);
+  --surface-border-hover: rgba(0, 86, 179, 0.2);
   --text-primary: #0f172a;
   --text-secondary: #475569;
   --text-tertiary: #64748b;
   
-  --accent-1: #1d4ed8; /* Cobalt Blue */
-  --accent-1-rgb: 29, 78, 216;
-  --accent-2: #2563eb; /* Royal Blue */
-  --accent-2-rgb: 37, 99, 235;
+  --accent-1: #0056b3; /* Rich Royal Blue */
+  --accent-1-rgb: 0, 86, 179;
+  --accent-2: #0284c7; /* Sky Blue */
+  --accent-2-rgb: 2, 132, 199;
   
-  --glow-accent-1: 0 0 20px rgba(29, 78, 216, 0.15);
-  --glow-accent-2: 0 0 20px rgba(37, 99, 235, 0.15);
+  --glow-accent-1: 0 0 20px rgba(0, 86, 179, 0.15);
+  --glow-accent-2: 0 0 20px rgba(2, 132, 199, 0.15);
   
-  --card-shadow: 0 10px 30px 0 rgba(148, 163, 184, 0.12);
-  --header-bg: rgba(248, 250, 252, 0.85);
-  --input-bg: rgba(255, 255, 255, 0.8);
+  --card-shadow: 0 10px 30px 0 rgba(148, 163, 184, 0.06);
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --input-bg: rgba(248, 250, 252, 0.8);
   
-  --cursor-color: #2563eb;
+  --cursor-color: #0056b3;
 }
 
 /* ==========================================================================

@@ -48,14 +48,9 @@ class HeroParticles {
   }
   
   updateColors() {
-    const isLightMode = document.body.getAttribute('data-theme') === 'light';
-    if (isLightMode) {
-      this.colors.particle = 'rgba(37, 99, 235, 0.2)'; // Royal Blue
-      this.colors.line = 'rgba(59, 130, 246, 0.06)';  // Soft Blue
-    } else {
-      this.colors.particle = 'rgba(59, 130, 246, 0.35)'; // Sky Blue
-      this.colors.line = 'rgba(37, 99, 235, 0.08)';    // Royal Blue
-    }
+    // Light-mode locked colors
+    this.colors.particle = 'rgba(0, 86, 179, 0.18)'; // Rich Royal Blue
+    this.colors.line = 'rgba(2, 132, 199, 0.08)';    // Sky Blue lines
   }
   
   createParticles() {

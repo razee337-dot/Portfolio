@@ -28,26 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   Theme Management (Light / Dark)
+   Theme Management (Light locked)
    ========================================================================== */
 function initThemes() {
-  const themeToggle = document.getElementById('theme-toggle');
-  if (!themeToggle) return;
-
-  const currentTheme = localStorage.getItem('theme') || 'dark';
-  document.body.setAttribute('data-theme', currentTheme);
-
-  themeToggle.addEventListener('click', () => {
-    const isDark = document.body.getAttribute('data-theme') === 'dark';
-    const nextTheme = isDark ? 'light' : 'dark';
-    
-    document.body.setAttribute('data-theme', nextTheme);
-    localStorage.setItem('theme', nextTheme);
-
-    // Fire custom themeChanged event for particles
-    const event = new CustomEvent('themeChanged', { detail: { theme: nextTheme } });
-    document.dispatchEvent(event);
-  });
+  document.body.removeAttribute('data-theme');
+  localStorage.removeItem('theme');
 }
 
 /* ==========================================================================
@@ -87,9 +72,6 @@ function renderDynamicContent() {
   // 3. Render About details
   const storyPara1 = document.getElementById('about-story-1');
   if (storyPara1) storyPara1.textContent = data.about.story;
-  
-  const storyPara2 = document.getElementById('about-story-2');
-  if (storyPara2) storyPara2.textContent = data.about.subStory;
 
   // 4. Render Stats
   const statsContainer = document.getElementById('stats-grid');
@@ -112,21 +94,38 @@ function renderDynamicContent() {
           <span class="education-year">${edu.year}</span>
         </div>
         <h4 class="education-institution">${edu.institution}</h4>
+        ${edu.university ? `<h5 class="education-university" style="font-size:0.9rem; color:var(--text-tertiary); margin-bottom:0.75rem; font-weight: 500;">${edu.university}</h5>` : ''}
         <p class="education-score">${edu.score}</p>
       </div>
     `).join('');
   }
 
-  // 4.6. Render Achievements Grid
-  const achievementsContainer = document.getElementById('achievements-grid');
+  // 4.6. Render Achievements List
+  const achievementsContainer = document.getElementById('achievements-list');
   if (achievementsContainer && data.achievements) {
     achievementsContainer.innerHTML = data.achievements.map((ach, i) => `
-      <div class="achievement-card glass reveal reveal-delay-${(i % 3) + 1}">
-        <div class="achievement-icon">
-          ${getAchievementIcon(ach.icon)}
+      <li class="achievement-item reveal reveal-delay-${(i % 3) + 1}">
+        <div class="achievement-item-icon">
+          <svg viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
         </div>
-        <h3 class="achievement-title">${ach.title}</h3>
-        <p class="achievement-desc">${ach.desc}</p>
+        <div class="achievement-item-text">
+          ${ach}
+        </div>
+      </li>
+    `).join('');
+  }
+
+  // 4.7 Render Certifications Grid
+  const certificationsContainer = document.getElementById('certifications-grid');
+  if (certificationsContainer && data.certifications) {
+    certificationsContainer.innerHTML = data.certifications.map((cert, i) => `
+      <div class="certification-card glass reveal reveal-delay-${(i % 3) + 1}">
+        <div class="certification-icon-wrapper">
+          ${getCertIcon(cert.icon)}
+        </div>
+        <h3 class="certification-title">${cert.name}</h3>
       </div>
     `).join('');
   }
@@ -179,7 +178,7 @@ function renderDynamicContent() {
     `).join('');
   }
 
-  // 7. Render Timeline
+  // 7. Render Timeline (Experience)
   const timeline = document.getElementById('experience-timeline');
   if (timeline) {
     timeline.innerHTML = data.experience.map((exp, i) => `
@@ -189,7 +188,9 @@ function renderDynamicContent() {
           <div class="timeline-period">${exp.period}</div>
           <h3 class="timeline-role">${exp.role}</h3>
           <h4 class="timeline-company">${exp.company}</h4>
-          <p class="timeline-description">${exp.description}</p>
+          <ul class="timeline-responsibilities" style="margin-top: 1rem; padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9375rem; display: flex; flex-direction: column; gap: 0.5rem; text-align: left;">
+            ${exp.responsibilities.map(resp => `<li style="list-style-type: disc;">${resp}</li>`).join('')}
+          </ul>
         </div>
       </div>
     `).join('');
@@ -197,7 +198,7 @@ function renderDynamicContent() {
 
   // 8. Render Contact Info
   const emailText = document.getElementById('contact-email');
-  if (emailText) emailText.textContent = "hello@" + data.profile.name.toLowerCase().replace(' ', '') + ".com";
+  if (emailText) emailText.textContent = data.profile.socials.find(s => s.name === "Email").url.replace("mailto:", "");
   
   const socialRow = document.getElementById('socials-row');
   if (socialRow) {
@@ -209,7 +210,7 @@ function renderDynamicContent() {
   }
 
   // 9. Render Download Resume links
-  const heroDownloadBtn = document.getElementById('hero-download-btn');
+  const heroDownloadBtn = document.getElementById('hero-resume-btn');
   if (heroDownloadBtn && data.profile.cvLink) {
     heroDownloadBtn.setAttribute('href', data.profile.cvLink);
   }
@@ -217,6 +218,18 @@ function renderDynamicContent() {
   if (aboutDownloadBtn && data.profile.cvLink) {
     aboutDownloadBtn.setAttribute('href', data.profile.cvLink);
   }
+}
+
+// Helper: Vector icons for certifications
+function getCertIcon(iconName) {
+  const icons = {
+    shield: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    code: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+    terminal: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>`,
+    network: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M12 8v8M5 16v-4h14v4"/></svg>`,
+    lock: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`
+  };
+  return icons[iconName] || `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`;
 }
 
 // Helper: Vector icons for socials

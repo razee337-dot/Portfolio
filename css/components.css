@@ -408,8 +408,14 @@ header.scrolled .nav-container {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+}
+
+@media (max-width: 576px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .stat-card {
@@ -1360,5 +1366,174 @@ footer {
   .hero-buttons {
     justify-content: center;
   }
+}
+
+/* ==========================================================================
+   Certifications & Achievements Additional Styling
+   ========================================================================== */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+  margin-top: 3rem;
+}
+
+.certification-card {
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border-radius: 1.25rem;
+  transition: transform var(--transition-medium), border-color var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.certification-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-1);
+  box-shadow: 0 10px 25px rgba(var(--accent-1-rgb), 0.08);
+}
+
+.certification-icon-wrapper {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: var(--input-bg);
+  border: 1.5px solid var(--surface-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-1);
+  margin: 0 auto 1.5rem;
+  transition: transform 0.3s var(--ease-out), border-color 0.3s var(--ease-out), background-color 0.3s var(--ease-out);
+}
+
+.certification-card:hover .certification-icon-wrapper {
+  transform: scale(1.1) rotate(10deg);
+  border-color: var(--accent-1);
+  background-color: rgba(var(--accent-1-rgb), 0.05);
+}
+
+.certification-icon-wrapper svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.certification-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+/* Achievements List Section styling */
+.achievements-list-container {
+  max-width: 850px;
+  margin: 3rem auto 0;
+  padding: 3rem 2.5rem;
+  background: var(--surface-color);
+  border: 1px solid var(--surface-border);
+  border-radius: 1.25rem;
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.achievements-list-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.achievement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  transition: transform 0.2s ease;
+}
+
+.achievement-item:hover {
+  transform: translateX(4px);
+}
+
+.achievement-item-icon {
+  flex-shrink: 0;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 50%;
+  background-color: rgba(var(--accent-1-rgb), 0.08);
+  color: var(--accent-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.15rem;
+  border: 1px solid rgba(var(--accent-1-rgb), 0.15);
+  box-shadow: 0 2px 6px rgba(var(--accent-1-rgb), 0.05);
+}
+
+.achievement-item-icon svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+}
+
+.achievement-item-text {
+  flex-grow: 1;
+}
+
+/* Cybersecurity Decorative Terminal Accent Badge */
+.cyber-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  background-color: rgba(var(--accent-1-rgb), 0.04);
+  border: 1px solid rgba(var(--accent-1-rgb), 0.15);
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--accent-1);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+
+.cyber-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10b981; /* Green status dot */
+  box-shadow: 0 0 8px #10b981;
+  animation: status-pulse 2.2s infinite ease-in-out;
+}
+
+@keyframes status-pulse {
+  0% { opacity: 0.3; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 0.3; transform: scale(0.9); }
+}
+
+/* Floating Label Tweaks for form validation spacing */
+.form-group.error .form-control {
+  border-color: #ef4444;
+}
+
+/* Interest badge styling hover transitions */
+.interest-badge {
+  transition: transform var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), background-color var(--transition-fast) !important;
+}
+
+.interest-badge:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-1) !important;
+  color: var(--text-primary) !important;
+  background-color: rgba(var(--accent-1-rgb), 0.05) !important;
 }
 
