@@ -47,7 +47,7 @@ const PORTFOLIO_DATA = {
     },
     {
       degree: "B.Tech in Computer Science and Engineering",
-      year: "2011",
+      year: "2007 – 2011",
       institution: "College of Engineering Trikaripur",
       university: "Cochin University",
       score: "Graduated with 73%"
