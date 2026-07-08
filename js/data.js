@@ -55,7 +55,7 @@ const PORTFOLIO_DATA = {
   ],
   experience: [
     {
-      period: "2013 – Present",
+      period: "2013 – 2025",
       role: "MIS Coordinator",
       company: "Samagra Shiksha Kerala",
       responsibilities: [
@@ -87,10 +87,7 @@ const PORTFOLIO_DATA = {
         { name: "Python", level: 90 },
         { name: "C", level: 85 },
         { name: "C++", level: 80 },
-        { name: "SQL", level: 88 },
-        { name: "Bash", level: 82 },
-        { name: "ASP.NET", level: 78 },
-        { name: "VB.NET", level: 75 }
+        { name: "SQL", level: 88 }
       ]
     },
     {
@@ -110,7 +107,6 @@ const PORTFOLIO_DATA = {
       items: [
         { name: "TCP/IP", level: 92 },
         { name: "DNS", level: 88 },
-        { name: "DHCP", level: 90 },
         { name: "Routing & Switching", level: 85 },
         { name: "Network Troubleshooting", level: 92 },
         { name: "LAN/WAN Architecture", level: 88 }
